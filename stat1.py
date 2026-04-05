@@ -5,14 +5,12 @@ import matplotlib.patches as mpatches
 from scipy import stats
 import matplotlib
 import platform
-import japanize_matplotlib
-if platform.system() == 'Windows':
-    matplotlib.rcParams['font.family'] = 'Yu Gothic'
-elif platform.system() == 'Darwin':
-    matplotlib.rcParams['font.family'] = 'Hiragino Sans'
-else:
-    matplotlib.rcParams['font.family'] = 'IPAGothic'
+import matplotlib.pyplot as plt
+import matplotlib.font_manager as fm
 
+# Notoフォントを検索して指定
+font_path = fm.findfont("Noto Sans CJK JP")
+plt.rcParams['font.family'] = fm.FontProperties(fname=font_path).get_name()
 st.set_page_config(
     page_title="農業統計研修 | 分布と仮説検定",
     page_icon="🥔",

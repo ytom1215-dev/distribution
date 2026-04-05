@@ -5,6 +5,7 @@ import matplotlib.patches as mpatches
 from scipy import stats
 import matplotlib
 import platform
+import japanize_matplotlib
 if platform.system() == 'Windows':
     matplotlib.rcParams['font.family'] = 'Yu Gothic'
 elif platform.system() == 'Darwin':
